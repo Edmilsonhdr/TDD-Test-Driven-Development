@@ -23,4 +23,8 @@ export class DateRange{
         const diffTime =  this.endDate.getTime() - this.startDate.getTime();
         return Math.ceil(diffTime / (1000 * 3600 * 24))
     }
+
+    overlaps(other: DateRange): boolean {
+        return this.startDate < other.endDate && other.getStartDate() < this.endDate;
+    }
 }
