@@ -3,7 +3,11 @@ export class DateRange{
     private readonly endDate: Date;
 
     constructor(startDate: Date, endDate: Date){
-        if(endDate <= startDate){
+        if(endDate == startDate){
+            throw new Error("A data de inicio e término não podem ser iguais")
+        }
+
+        if(endDate < startDate){
             throw new Error("A data de término deve ser posterior á data de inicio")
         }
 

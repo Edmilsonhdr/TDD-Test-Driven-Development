@@ -43,10 +43,10 @@ describe("DateRange Value Object",() =>{
         expect(overlaps).toBe(true)
     })
 
-    it("Deve lançar erro se a data de inicio  e término forem iguais", () => {
+    it("Deve lançar erro se a data de inicio e término forem iguais", () => {
         const dateRange = new Date("2024-12-20");
         expect(() => {
             new DateRange(dateRange, dateRange);
-        }).toThrow("A data de término deve ser posterior á data de inicio")
+        }).toThrow("A data de inicio e término não podem ser iguais")
     })
 })
